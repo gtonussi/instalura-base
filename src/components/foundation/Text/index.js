@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { propToStyle } from '../../../theme/utils/propToStyle';
 
 export const TextStyleVariantsMap = {
   title: css`
@@ -42,11 +43,13 @@ export const TextStyleVariantsMap = {
 
 const TextBase = styled.span`
   ${({ variant }) => TextStyleVariantsMap[variant]}
+
+  ${propToStyle('textAlign')}
 `;
 
-export default function Text({ tag, variant, children }) {
+export default function Text({ tag, variant, children, ...props }) {
   return (
-    <TextBase as={tag} variant={variant}>
+    <TextBase as={tag} variant={variant} {...props}>
       {children}
     </TextBase>
   )

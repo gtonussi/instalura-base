@@ -35,7 +35,6 @@ export const Button = styled.button`
       ${TextStyleVariantsMap.smallestException}
     `,
     md: css`
-      padding: 12px 43px;
       ${TextStyleVariantsMap.paragraph1}
     `,
   })}

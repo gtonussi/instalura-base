@@ -14,6 +14,7 @@ const ButtonDefault = css`
   color: ${({ variant, theme }) => get(theme, `colors.${variant}.contrastText`)};
 `;
 
+/* eslint-disable-next-line import/prefer-default-export */
 export const Button = styled.button`
   border: 0;
   cursor: pointer;
@@ -23,7 +24,7 @@ export const Button = styled.button`
   border-radius: ${({ theme }) => theme.borderRadius};
   transition: opacity ${({ theme }) => theme.transition};
 
-  ${({ ghost }) => ghost ? ButtonGhost : ButtonDefault};
+  ${({ ghost }) => (ghost ? ButtonGhost : ButtonDefault)};
 
   &:hover,
   &:focus {

@@ -1,7 +1,4 @@
-/* eslint-disable react/jsx-props-no-spreading */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable semi */
-/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable  */
 
 import Document from 'next/document'
 import { ServerStyleSheet } from 'styled-components'

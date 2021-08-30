@@ -1,5 +1,6 @@
-import React from 'react';
+/* eslint-disable */
 
+import React from 'react';
 import Menu from '../src/components/commons/Menu';
 import Text from '../src/components/foundation/Text';
 import Footer from '../src/components/commons/Footer';
@@ -31,7 +32,6 @@ export default function Home() {
         {(propsDoModal) => (
           <Box
             backgroundColor="white"
-            // eslint-disable-next-line react/jsx-props-no-spreading
             {...propsDoModal}
           >
             <div>

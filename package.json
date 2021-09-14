@@ -31,10 +31,5 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn lint"
-    }
-  },
   "license": "MIT"
 }

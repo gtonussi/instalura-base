@@ -31,7 +31,9 @@
     "husky": "^7.0.2"
   },
   "husky": {
-    "pre-push": "yarn lint"
+    "hooks": {
+      "pre-push": "yarn lint"
+    }
   },
   "license": "MIT"
 }

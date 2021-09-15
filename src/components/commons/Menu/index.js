@@ -1,12 +1,13 @@
 /* eslint-disable indent */
 
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Logo } from '../../../theme/Logo/Logo';
 import { Button } from '../Button';
 import { MenuWrapper } from './styles/MenuWrapper';
-import Text from '../../foundation/Text';
+import Link from '../Link';
 
-export default function Menu() {
+export default function Menu({ onCadastrarClick }) {
   const links = [
     {
       texto: 'Home',
@@ -30,20 +31,24 @@ export default function Menu() {
       <MenuWrapper.CentralSide>
         {links.map((link) => (
           <li key={link.url}>
-            <Text variant="smallestException" tag="a" href={link.url}>
+            <Link variant="smallestException" href={link.url}>
               {link.texto}
-            </Text>
+            </Link>
           </li>
           ))}
       </MenuWrapper.CentralSide>
       <MenuWrapper.RightSide>
-        <Button ghost variant="secondary.main">
+        <Button ghost variant="secondary.main" href="/app/login">
           Entrar
         </Button>
-        <Button variant="primary.main">
+        <Button variant="primary.main" onClick={onCadastrarClick}>
           Cadastrar
         </Button>
       </MenuWrapper.RightSide>
     </MenuWrapper>
   );
 }
+
+Menu.propTypes = {
+  onCadastrarClick: PropTypes.func.isRequired,
+};

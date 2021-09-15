@@ -1,10 +1,14 @@
 /* eslint-disable indent */
+/* eslint-disable object-curly-newline */
+/* eslint-disable react/jsx-props-no-spreading */
+
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import get from 'lodash/get';
 import { propToStyle } from '../../../theme/utils/propToStyle';
 import { breakpointsMedia } from '../../../theme/utils/breakpointsMedia';
+import Link from '../../commons/Link';
 
 export const TextStyleVariantsMap = {
   title: css`
@@ -57,10 +61,15 @@ const TextBase = styled.span`
   ${propToStyle('margin')}
 `;
 
-// eslint-disable-next-line object-curly-newline
-export default function Text({ tag, variant, children, ...props }) {
+export default function Text({ tag, variant, children, href, ...props }) {
+  if (props.href) {
+    return (
+      <TextBase as={Link} href={href} variant={variant} {...props}>
+        {children}
+      </TextBase>
+    );
+  }
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
     <TextBase as={tag} variant={variant} {...props}>
       {children}
     </TextBase>
@@ -71,10 +80,12 @@ Text.propTypes = {
   tag: PropTypes.string,
   variant: PropTypes.string,
   children: PropTypes.node,
+  href: PropTypes.string,
 };
 
 Text.defaultProps = {
   tag: 'span',
   variant: 'paragraph1',
   children: null,
+  href: '',
 };
